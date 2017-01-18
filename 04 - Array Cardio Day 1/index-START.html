@@ -32,16 +32,45 @@
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
 
+    const oldInventors = inventors.filter(inventors => (inventors.year > 1499 && inventors.year <= 1600 ))
+    // console.log(oldInventors);
+
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
+
+    const inventorNames = inventors.map((names, index) => {
+      return (names.first + " " + names.last)
+    })
+    console.log(inventorNames)
+
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
+    const happyBdayInventors = inventors.sort(function(a,b){return a.year-b.year})
+    console.log(happyBdayInventors)
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
 
+
+
+    const inventorLives = inventors.reduce((a, b) => {
+      return a + (b.passed - b.year);
+    }, 0);
+
+    console.log(inventorLives);
+
+
     // 5. Sort the inventors by years lived
+
+    const inventorYearsLived = inventors.map((inventor, index) => {
+      return (inventor.passed - inventor.year)
+    })
+
+    const longestLivingInventor = inventorYearsLived.sort(function(a,b) {return a - b})
+    console.log(longestLivingInventor)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -50,10 +79,25 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
+    const lastNames = people.sort((a,b) => {
+      const [lastNameA, firstNameA] = a.split(', ');
+      const [lastNameB, firstNameB] = b.split(', ');
+      return lastNameA > lastNameB ? 1 : -1;
+    });
+    console.log(lastNames);
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    let vehicleCount = {}
+    const count = data.forEach(function(count) {
+      vehicleCount[count] = vehicleCount[count] + 1 || 1
+    })
+
+    console.log(vehicleCount)
+
+console.log(vehicleCount)
   </script>
 </body>
 </html>
