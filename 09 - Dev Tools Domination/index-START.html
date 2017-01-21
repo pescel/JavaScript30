@@ -18,28 +18,87 @@
     }
 
     // Regular
+    console.log('alligator');
 
     // Interpolated
+    console.log('Hello I am an  %s!', '🐊');
 
     // Styled
+    console.log('%c ALLIGATOR !!!', 'font-size: 30px; background: gray; ');
 
     // warning!
+    console.warn('so many alligators 😱');
 
     // Error :|
+    console.error('jk no alligators here');
 
     // Info
+    console.info('alligators have pink toe nails')
 
     // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('alligator'), 'that is wrong!');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This dog is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('alligator')
+    console.count('pelican')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('pelican')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('flamingo')
+    console.count('alligator')
+    console.count('alligator')
+
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      })
+
+    // table
+    console.table(dogs)
 
   </script>
 </body>
